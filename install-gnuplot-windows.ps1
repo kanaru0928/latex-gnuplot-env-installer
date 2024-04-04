@@ -31,4 +31,6 @@ echo "luaの設定を変更中"
 $luaFile = "C:\Program Files\gnuplot\share\lua\gnuplot-tikz.lua"
 (Get-Content $luaFile) | %{ $_ -replace "^ *notimestamp = false,$", "  notimestamp = true," } | Set-Content $luaFile
 
+mktexlsr
+
 echo "gnuplot設定完了"

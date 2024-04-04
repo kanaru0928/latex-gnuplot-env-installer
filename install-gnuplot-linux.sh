@@ -34,4 +34,6 @@ fi
 echo "luaの設定を変更中"
 sudo sed -i -E '/^ *notimestamp *=/s/false/true/' /usr/share/gnuplot/gnuplot/*/lua/gnuplot-tikz.lua
 
+sudo mktexlsr
+
 echo "gnuplot設定完了"
