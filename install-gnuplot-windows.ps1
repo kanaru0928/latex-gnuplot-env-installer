@@ -6,12 +6,12 @@ function Find-Executable (
   $null -ne (Get-Command -Name $command -ErrorAction SilentlyContinue)
 }
 
-if (! Find-Executable "kpsewhich") {
+if (!(Find-Executable "kpsewhich")) {
   echo "TeX Liveがインストールされていません。"
   throw
 }
 
-if (! Find-Executable "gnuplot") {
+if (!(Find-Executable "gnuplot")) {
   echo "gnuplotがインストールされていません。"
   throw
 }
@@ -23,7 +23,7 @@ mkdir gnuplot
 cd gnuplot
 gnuplot -e "set term tikz createstyle"
 
-if (! Test-Path "C:\Program Files\gnuplot\share\lua\gnuplot-tikz.lua") {
+if (!(Test-Path "C:\Program Files\gnuplot\share\lua\gnuplot-tikz.lua")) {
   echo "luaの設定ファイルが存在しません。gnuplotが壊れている可能性があります。gnuplotを再インストールしてください。"
 }
 
